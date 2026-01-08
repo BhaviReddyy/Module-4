@@ -13,7 +13,7 @@ Event-driven architecture
 
 Uses callbacks, promises, and async/await
 
-High-Level Architecture
+# High-Level Architecture
 
 JavaScript Engine (V8) – Executes JavaScript code
 
@@ -189,7 +189,7 @@ Node.js main thread is single-threaded
 
 Heavy computation blocks the event loop
 
-# Worker threads:
+Worker threads:
 
 Improve performance
 
@@ -229,7 +229,7 @@ queueMicrotask()
 
 process.nextTick()
 
-# Characteristics
+Characteristics
 
 Higher priority than macro tasks
 
