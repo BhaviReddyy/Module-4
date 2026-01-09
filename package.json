@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/BhaviReddyy/Module-4#readme",
   "dependencies": {
-    "boxen": "^5.1.2"
+    "boxen": "^5.1.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
