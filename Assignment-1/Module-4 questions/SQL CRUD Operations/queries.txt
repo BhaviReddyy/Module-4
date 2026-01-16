@@ -1,4 +1,6 @@
-STEP 1: CREATE TABLE
+-- ================================
+-- STEP 1: CREATE TABLE
+-- ================================
 
 DROP TABLE IF EXISTS students;
 
@@ -11,35 +13,14 @@ CREATE TABLE students (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-Output:
-DROP TABLE
-CREATE TABLE
+-- Output:
+-- DROP TABLE
+-- CREATE TABLE
 
 
-STEP 2: INSERT DATA
-
-INSERT INTO students (name, email, age, course)
-VALUES
-('Aarav Sharma', 'aarav@gmail.com', 21, 'Computer Science'),
-('Priya Reddy', 'priya@gmail.com', 22, 'Information Technology'),
-('Rahul Verma', 'rahul@gmail.com', 20, 'Computer Science'),
-('Sneha Patel', 'sneha@gmail.com', 23, 'Data Science'),
-('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
-('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
-('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
-
-Output:
-INSERT 0 7
-
-
-CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
-    email TEXT UNIQUE NOT NULL,
-    age INTEGER,
-    course TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- ================================
+-- STEP 2: INSERT DATA
+-- ================================
 
 INSERT INTO students (name, email, age, course)
 VALUES
@@ -50,53 +31,67 @@ VALUES
 ('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
 ('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
 ('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
+
+-- Output:
+-- INSERT 0 7
+
+
+-- ================================
+-- STEP 3: READ DATA
+-- ================================
+
+-- Fetch all students
 SELECT * FROM students;
+
+-- Fetch students older than 20
 SELECT * FROM students
 WHERE age > 20;
 
-
+-- Fetch only name and email
 SELECT name, email FROM students;
 
+-- Fetch students enrolled in Computer Science
 SELECT * FROM students
 WHERE course = 'Computer Science';
 
 
+-- ================================
+-- STEP 4: UPDATE DATA
+-- ================================
+
+-- Update age of one student
 UPDATE students
 SET age = 21
 WHERE name = 'Rahul Verma';
 
+-- Output:
+-- UPDATE 1
+
+
+-- Update course for IT students
 UPDATE students
 SET course = 'Software Engineering'
 WHERE course = 'Information Technology';
 
+-- Output:
+-- UPDATE 2
 
+
+-- ================================
+-- STEP 5: DELETE DATA
+-- ================================
+
+-- Delete one student using id
 DELETE FROM students
 WHERE id = 7;
 
-DROP TABLE IF EXISTS students;
+-- Output:
+-- DELETE 1
 
-CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
-    email TEXT UNIQUE NOT NULL,
-    age INTEGER,
-    course TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
-INSERT INTO students (name, email, age, course)
-VALUES
-('Aarav Sharma', 'aarav@gmail.com', 21, 'Computer Science'),
-('Priya Reddy', 'priya@gmail.com', 22, 'Information Technology'),
-('Rahul Verma', 'rahul@gmail.com', 20, 'Computer Science'),
-('Sneha Patel', 'sneha@gmail.com', 23, 'Data Science'),
-('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
-('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
-('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
+-- Delete all students below age 20
+DELETE FROM students
+WHERE age < 20;
 
-SELECT * FROM students;
-SELECT * FROM students
-WHERE age > 20;
-
-SELECT * FROM students
-WHERE course = 'Computer Science';
+-- Output:
+-- DELETE 1
