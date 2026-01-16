@@ -1,0 +1,102 @@
+STEP 1: CREATE TABLE
+
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Output:
+DROP TABLE
+CREATE TABLE
+
+
+STEP 2: INSERT DATA
+
+INSERT INTO students (name, email, age, course)
+VALUES
+('Aarav Sharma', 'aarav@gmail.com', 21, 'Computer Science'),
+('Priya Reddy', 'priya@gmail.com', 22, 'Information Technology'),
+('Rahul Verma', 'rahul@gmail.com', 20, 'Computer Science'),
+('Sneha Patel', 'sneha@gmail.com', 23, 'Data Science'),
+('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
+('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
+('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
+
+Output:
+INSERT 0 7
+
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (name, email, age, course)
+VALUES
+('Aarav Sharma', 'aarav@gmail.com', 21, 'Computer Science'),
+('Priya Reddy', 'priya@gmail.com', 22, 'Information Technology'),
+('Rahul Verma', 'rahul@gmail.com', 20, 'Computer Science'),
+('Sneha Patel', 'sneha@gmail.com', 23, 'Data Science'),
+('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
+('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
+('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
+SELECT * FROM students;
+SELECT * FROM students
+WHERE age > 20;
+
+
+SELECT name, email FROM students;
+
+SELECT * FROM students
+WHERE course = 'Computer Science';
+
+
+UPDATE students
+SET age = 21
+WHERE name = 'Rahul Verma';
+
+UPDATE students
+SET course = 'Software Engineering'
+WHERE course = 'Information Technology';
+
+
+DELETE FROM students
+WHERE id = 7;
+
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (name, email, age, course)
+VALUES
+('Aarav Sharma', 'aarav@gmail.com', 21, 'Computer Science'),
+('Priya Reddy', 'priya@gmail.com', 22, 'Information Technology'),
+('Rahul Verma', 'rahul@gmail.com', 20, 'Computer Science'),
+('Sneha Patel', 'sneha@gmail.com', 23, 'Data Science'),
+('Karan Mehta', 'karan@gmail.com', 19, 'Information Technology'),
+('Ananya Singh', 'ananya@gmail.com', 24, 'Data Science'),
+('Rohit Kumar', 'rohit@gmail.com', 18, 'Computer Science');
+
+SELECT * FROM students;
+SELECT * FROM students
+WHERE age > 20;
+
+SELECT * FROM students
+WHERE course = 'Computer Science';
