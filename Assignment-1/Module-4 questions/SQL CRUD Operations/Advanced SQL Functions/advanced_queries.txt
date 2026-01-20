@@ -1,0 +1,83 @@
+-- ================================
+-- ADVANCED SQL QUERIES (STUDENTS)
+-- ================================
+
+-- Step 2: Aggregate Queries
+
+-- 1. Count total number of students
+SELECT COUNT(*) AS total_students
+FROM students;
+
+-- 2. Find average age of students
+SELECT AVG(age) AS average_age
+FROM students;
+
+-- 3. Find minimum and maximum age
+SELECT 
+    MIN(age) AS minimum_age,
+    MAX(age) AS maximum_age
+FROM students;
+
+-- 4. Count students enrolled in each course
+SELECT 
+    course,
+    COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+-- 5. Count students whose age is greater than 20
+SELECT COUNT(*) AS students_above_20
+FROM students
+WHERE age > 20;
+
+
+-- ================================
+-- Step 3: Grouping & Filtering
+-- ================================
+
+-- 6. Course-wise student count
+SELECT 
+    course,
+    COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+-- 7. Courses where student count is greater than 1
+SELECT 
+    course,
+    COUNT(*) AS student_count
+FROM students
+GROUP BY course
+HAVING COUNT(*) > 1;
+
+-- 8. Courses sorted by highest student count
+SELECT 
+    course,
+    COUNT(*) AS student_count
+FROM students
+GROUP BY course
+ORDER BY student_count DESC;
+
+
+-- ================================
+-- Step 4: Ordering & Limiting
+-- ================================
+
+-- 9. Fetch latest 3 students based on created_at
+SELECT *
+FROM students
+ORDER BY created_at DESC
+LIMIT 3;
+
+-- 10. Fetch top 5 oldest students
+SELECT *
+FROM students
+ORDER BY age DESC
+LIMIT 5;
+
+-- 11. Fetch students from a specific course sorted by age (descending)
+-- Change course name if needed
+SELECT *
+FROM students
+WHERE course = 'Computer Science'
+ORDER BY age DESC;
